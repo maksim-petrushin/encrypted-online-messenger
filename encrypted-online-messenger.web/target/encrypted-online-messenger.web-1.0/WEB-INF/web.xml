@@ -9,4 +9,12 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>com.encryptedmessenger.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/hello1</url-pattern>
+  </servlet-mapping>
 </web-app>

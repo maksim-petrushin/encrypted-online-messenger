@@ -10,6 +10,12 @@
   </parent>
   <packaging>war</packaging>
   <dependencies>
+	  <dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>5.0.0</version>
+			<scope>provided</scope>
+		</dependency>
       <dependency>
       <groupId>com.encryptedmessenger</groupId>
       <artifactId>encrypted-online-messenger.core</artifactId>
@@ -34,10 +40,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>17</release>
-        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>

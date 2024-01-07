@@ -63,5 +63,13 @@ public class MySqlFriendshipManagementService implements FriendshipManagementSer
 		return result;
 		
 	}
+	
+	@Override
+	public List<User> getFriendsListByUser(User user) {
+		List<UserDto> friends = friendshipDao.getFriendsByUser(userConverter.convertUserToUserDto(user));
+		List<User> usrs = userConverter.convertUserDtosToUsers(friends);
+		return usrs;
+		
+	}
 
 }

@@ -1,6 +1,8 @@
 package com.encryptedmessenger.services.impl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.encryptedmessenger.enteties.Friendship;
 import com.encryptedmessenger.enteties.User;
@@ -98,7 +100,10 @@ public class DefaultFriendshipManagementService implements FriendshipManagementS
 			lastFriendshipIndex = 0;
 			friendships = new Friendship[DEFAULT_FRIENDSHIP_CAPACITY];
 		}
-		
+		@Override
+		public List<User> getFriendsListByUser(User user) {
+			return (new ArrayList<User>());
+		}
 		
 //		// Stream API version of the method
 //		@Override

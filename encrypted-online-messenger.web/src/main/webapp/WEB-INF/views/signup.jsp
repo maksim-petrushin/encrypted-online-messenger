@@ -17,37 +17,25 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="signup" method="POST">
 					<span class="login100-form-title p-b-26">
-						Registration 
+						Registration 1
 					</span>
-					
-					<div class="wrap-input100 validate-input" data-validate = "Enter First Name">
-						<input class="input100" type="text" name="firstName">
-						<span class="focus-input100" data-placeholder="First Name"></span>
+					<div class="wrap-input100 validate-input">
+						Nick Name<input class="input100" type="text" name="nickName">
+						<span class="focus-input100" data-placeholder="Nick Name"></span>
 					</div>
 					
-					<div class="wrap-input100 validate-input" data-validate = "Enter Last Name">
-						<input class="input100" type="text" name="lastName">
-						<span class="focus-input100" data-placeholder="Last Name"></span>
-					</div>
-					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="email" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
+					<div class="wrap-input100 validate-input">
+						Phone<input class="input100" type="text" name="phone">
+						<span class="focus-input100" data-placeholder="Phone"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="password">
+					<div class="wrap-input100 validate-input">
+						Password<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Repeat password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="repeatPassword">
+						Repeat Password<input class="input100" type="password" name="repeatPassword">
 						<span class="focus-input100" data-placeholder="Repeat Password"></span>
 					</div>
 

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Encrypted Messenger</title>
+<title>Chat with ${friend.nickName}</title>
 
 
 </head>
@@ -27,23 +27,32 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<div class="friends-list">
-		Friends:
+		Chat with ${friend.nickName}:
 		<ul>
 			<c:if test="${loggedInUser != null}">
-				<c:forEach items="${friends}" var="friend">
-					<li><a href="chat?phone=${friend.phone}">
-							<div class="box">
-								<h4>${friend.nickName}</h4>
-							</div>
-					</a></li>
+				<c:forEach items="${messages}" var="message">
+					(${message.time}) ${message.sender.nickName}: ${message.body}
+					</br>
 				</c:forEach>
 			</c:if>
 			<c:if test="${loggedInUser == null}">
-				<li>Log-In to view Friends</li>
+				<li>Log-In to see Chat</li>
 			</c:if>
 		</ul>
+		<form class="draft" action="draft"
+			method="POST">
+			<div class="wrap-input100">
+			 	<input type="hidden" name="receiver" value="${friend.phone}" />
+				<input class="input100" type="text" name="draft">
+			</div>
+
+			<div class="wrap-login100-form-btn">
+				<button class="login100-form-btn">Send</button>
+			</div>
+
+		</form>
 	</div>
 
 

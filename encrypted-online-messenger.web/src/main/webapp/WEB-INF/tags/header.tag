@@ -12,10 +12,8 @@
 								key="signout.btn" bundle="${rb}" /></a></li>
 				</c:if>
 				<c:if test="${loggedInUser == null}">
-					<li><a href="signin"><fmt:message key="signin.btn"
-								bundle="${rb}" /></a></li>
-					<li><a class="custom-b" href="signup"><fmt:message
-								key="signup.btn" bundle="${rb}" /></a></li>
+					<li><a href="signin">Sign In</a></li>
+					<li><a class="custom-b" href="signup">Sign up /></a></li>
 				</c:if>
 			</ul>
 		</div>

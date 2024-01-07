@@ -1,15 +1,17 @@
 package com.encryptedmessenger.controllers;
 
-import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
+
+import com.encryptedmessenger.Configurations;
+import com.encryptedmessenger.enteties.User;
+import com.encryptedmessenger.services.UserManagementService;
+import com.encryptedmessenger.services.impl.MySqlUserManagementService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import com.encryptedmessenger.services.impl.MySqlUserManagementService;
-import com.encryptedmessenger.services.UserManagementService;
-import com.encryptedmessenger.enteties.User;
 
 @WebServlet("/signin")
 public class SignInServlet extends HttpServlet {
@@ -17,6 +19,12 @@ public class SignInServlet extends HttpServlet {
 	public static final String LOGGED_IN_USER_ATTR = "loggedInUser";
 	private UserManagementService userManagementService = MySqlUserManagementService.getInstance();
 
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher(Configurations.VIEWS_PATH_RESOLVER 
+				+ "signin.jsp").forward(request, response);
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		User user = userManagementService.getUserByPhone(request.getParameter("phone"));
@@ -29,9 +37,9 @@ public class SignInServlet extends HttpServlet {
 
 		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
 			request.getSession().setAttribute(LOGGED_IN_USER_ATTR, user);
-			response.sendRedirect(baseUrl + "/homepage.html");
-		} else {
-			response.sendRedirect(baseUrl + "/signin.html");
+			response.sendRedirect(baseUrl + "/homepage");
+		} else {	
+			response.sendRedirect(baseUrl + "/signin");
 		}
 	}
 

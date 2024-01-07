@@ -1,24 +1,22 @@
+<%@ taglib prefix="shop" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Sign Up</title>
+	<title>Sign In</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
+	<tags:header/>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="signup" method="POST">
+				<form class="login100-form validate-form" action="signin" method="POST">
 					<span class="login100-form-title p-b-26">
-						Registration
+						SIGN IN
 					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter Nick Name">
-						<input class="input100" type="text" name="nickName">
-						<span class="focus-input100" data-placeholder="Nick-Name"></span>
-					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="phone">
@@ -33,30 +31,21 @@
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Repeat password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="repeatPassword">
-						<span class="focus-input100" data-placeholder="Repeat Password"></span>
-					</div>
-
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
-								Sign Up
+								Login
 							</button>
 						</div>
 					</div>
-
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							Already have an account?
+							Don't have an account?
 						</span>
 
-						<a class="txt2" href="signin.html">
-							Sign In
+						<a class="txt2" href="signup.html">
+							Sign Up
 						</a>
 					</div>
 				</form>

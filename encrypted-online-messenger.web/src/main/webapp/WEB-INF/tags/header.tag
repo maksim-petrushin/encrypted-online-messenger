@@ -9,7 +9,7 @@
 			<a href="signout">Sign Out</a>
 		</c:if>
 		<c:if test="${loggedInUser == null}">
-			<a href="signin">Sign In</a>
+			<a href="signin">Log In</a>
 			<a href="signup">Sign up</a>
 		</c:if>
 	</div>

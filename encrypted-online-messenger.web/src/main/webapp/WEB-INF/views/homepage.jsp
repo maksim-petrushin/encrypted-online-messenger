@@ -18,6 +18,18 @@
 	<main>
 		<aside class="friends-list">
 			<c:if test="${loggedInUser != null}">
+				<div class="header-wrapper">
+					<form class="header-container" action="addfriend" method="POST">
+						<input class="add-friend-button" type="submit" value="Add" />
+						<div class="search-box">
+							<input type="text" name="users-phone" placeholder="Search User by Phone" required>
+						</div>
+					</form>
+					<c:if test="${errMsg != null}">
+						<h2 class="txtErr" align="center">${errMsg}</h2>
+					</c:if>
+				</div>
+
 				<div class="body-container">
 					<div class="chats">
 						<c:forEach items="${friends}" var="friend">
@@ -36,7 +48,6 @@
 							</a>
 						</c:forEach>
 					</div>
-
 				</div>
 			</c:if>
 			<c:if test="${loggedInUser == null}">
@@ -86,7 +97,8 @@
 
 					<div>
 						<c:if test="${friend != null}">
-							<form class="message-box" action="draft" method="POST" autocomplete="off">
+							<form class="message-box" action="draft" method="POST"
+								autocomplete="off">
 								<div class="message-content">
 									<input type="hidden" name="receiver" value="${friend.phone}" />
 									<input type="text" placeholder="Message" name="draft">

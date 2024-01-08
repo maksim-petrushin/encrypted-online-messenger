@@ -1,21 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<div class="right-nav">
-	<div class="login-sr">
-		<div class="login-signup">
-			<ul>
-				<c:if test="${loggedInUser != null}">
-					<li><a href="my-profile"><fmt:message key="welcome.lbl"
-								bundle="${rb}" /> ${loggedInUser.nickName}</a></li>
-					<li><a class="custom-b" href="signout"><fmt:message
-								key="signout.btn" bundle="${rb}" /></a></li>
-				</c:if>
-				<c:if test="${loggedInUser == null}">
-					<li><a href="signin">Sign In</a></li>
-					<li><a class="custom-b" href="signup">Sign up /></a></li>
-				</c:if>
-			</ul>
-		</div>
+<div class="top-head-div">
+	<a class="active" href="homepage">Home</a> <a href="#">Settings</a>
+	<div class="topnav-right">
+		<c:if test="${loggedInUser != null}">
+			<a href="#">User: ${loggedInUser.nickName}</a>
+			<a href="signout">Sign Out</a>
+		</c:if>
+		<c:if test="${loggedInUser == null}">
+			<a href="signin">Sign In</a>
+			<a href="signup">Sign up</a>
+		</c:if>
 	</div>
 </div>

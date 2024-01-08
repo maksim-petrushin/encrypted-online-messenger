@@ -28,7 +28,7 @@ public class HomepageServlet extends HttpServlet {
 		User currUser = (DefaultUser)request.getSession().getAttribute("loggedInUser");
 		if(currUser != null) {
 			friends = friendshipManagementService.getFriendsListByUser(currUser);
-			request.setAttribute("friends", friends);
+			request.getSession().setAttribute("friends", friends);
 			
 		}
 		request.getRequestDispatcher(Configurations.VIEWS_PATH_RESOLVER 

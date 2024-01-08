@@ -52,12 +52,12 @@ public class ChatServlet extends HttpServlet {
 		
 		if(currUser != null) {
 			messages = messageManagementService.getMessagesBetween(currUser, friend);
-			request.setAttribute("messages", messages);
+			request.getSession().setAttribute("messages", messages);
 			request.getSession().setAttribute("friend", friend);
 			
 		}
 		request.getRequestDispatcher(Configurations.VIEWS_PATH_RESOLVER 
-				+ "chat.jsp").forward(request, response);
+				+ "homepage.jsp").forward(request, response);
 	}
 
 }
